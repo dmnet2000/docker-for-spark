@@ -1,7 +1,7 @@
 DOCKER=docker
 IMAGE=spark
 VERSION=2.4.0
-REPOSITORY=nexus01.intranet.previmedical.it:8083
+REPOSITORY=nexus01:8083
 BUILD_ARGS=
 
 all: push
