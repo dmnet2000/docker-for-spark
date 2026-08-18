@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repo is
 
-A minimal Docker build definition that packages Apache Spark (with a Hadoop-provided distribution) into a single container image for Previmedical. There is no application source code here — the repository's only purpose is to produce and publish the `spark` Docker image.
+A minimal Docker build definition that packages Apache Spark (with a Hadoop-provided distribution) into a single container image. There is no application source code here — the repository's only purpose is to produce and publish the `spark` Docker image.
 
 ## Build system
 
@@ -19,7 +19,7 @@ The `Makefile` drives build/tag/push and is parameterized entirely through varia
 
 - `IMAGE` (default `spark`)
 - `VERSION` (default `2.4.0`, but CI overrides it from `version.txt`)
-- `REPOSITORY` (default `nexus01.intranet.previmedical.it:8083`)
+- `REPOSITORY` (default `nexus01:8083`)
 - `BUILD_ARGS` (extra `docker build` args, e.g. proxy settings)
 
 Common commands:
@@ -42,7 +42,7 @@ There is no lint step, no test suite, and no application code to run — validat
 
 ## CI/CD
 
-`Jenkinsfile` defines the pipeline used on the `gitlab-previmedical` GitLab connection:
+`Jenkinsfile` defines the pipeline used on the `gitlab` GitLab connection:
 
 1. **Init** — logs the running node.
 2. **Build spark docker image** — runs `make build` with `VERSION` read from `version.txt`.
