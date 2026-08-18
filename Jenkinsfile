@@ -2,11 +2,11 @@ pipeline {
   agent any
 
   options {
-    gitLabConnection('gitlab-previmedical')
+    gitLabConnection('gitlab-name')
   }
 
   environment {
-    REPOSITORY = "nexus01.intranet.previmedical.it:8083"
+    REPOSITORY = "nexus01:8083"
     IMAGE = "spark"
     VERSION = readFile("version.txt").trim()
   }
