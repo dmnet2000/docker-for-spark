@@ -62,7 +62,7 @@ Override any of these via `make VAR=value ...`:
 |----------|---------|
 | `IMAGE` | `spark` |
 | `VERSION` | `2.4.0` |
-| `REPOSITORY` | `nexus01.intranet.previmedical.it:8083` |
+| `REPOSITORY` | `nexus:8083` |
 | `BUILD_ARGS` | *(empty)* |
 
 ## Versioning
@@ -71,4 +71,4 @@ The image version is tracked in `version.txt` and is used by the Jenkins pipelin
 
 ## CI/CD
 
-The `Jenkinsfile` pipeline (GitLab connection `gitlab-previmedical`) builds the image on every run via `make build`, and additionally publishes it to Nexus via `make push` when the branch is `master`.
+The `Jenkinsfile` pipeline (GitLab connection) builds the image on every run via `make build`, and additionally publishes it to Nexus via `make push` when the branch is `master`.
